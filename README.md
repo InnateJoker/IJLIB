@@ -1,3 +1,10 @@
+![](https://img.shields.io/github/release/InnateJoker/IJLIB.svg)
+![](https://img.shields.io/github/repo-size/InnateJoker/IJLIB)
+![](https://img.shields.io/github/languages/top/InnateJoker/IJLIB)
+![](https://img.shields.io/github/stars/InnateJoker/IJLIB.svg)
+![](https://img.shields.io/github/commit-activity/t/InnateJoker/IJLIB)
+![](https://img.shields.io/github/license/InnateJoker/IJLIB)
+
 # InnateJoker's Library
 
 这是作者为 `InnateJoker` 创造的 `C++` 库，旨在写出更多 `C++` 标准库没有的更多效率高函数。此后将不断更新。
