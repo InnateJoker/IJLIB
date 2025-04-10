@@ -1,8 +1,8 @@
 #ifndef IJSTD_HPP
 #define IJSTD_HPP
 
-#include <IJint.hpp>
-#include <IJfloat.hpp>
-#include <IJmath.hpp>
+#include <IJ/IJint.hpp>
+#include <IJ/IJfloat.hpp>
+#include <IJ/IJmath.hpp>
 
 #endif // IJSTD_HPP

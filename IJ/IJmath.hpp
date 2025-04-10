@@ -259,5 +259,62 @@ namespace ij {
         }
         return ans;
     }
+
+    template <typename t_log2>
+    t_log2 log2(t_log2 &n) {
+        t_log2 result = 0;
+        while (n > 1) {
+            n /= 2;
+            ++result;
+        }
+        return result;
+    }
+    template <typename T_log2>
+    T_log2 log2(T_log2 &&n) {
+        T_log2 result = 0;
+        while (n > 1) {
+            n /= 2;
+            ++result;
+        }
+        return result;
+    }
+
+    template <typename t_log10>
+    t_log10 log10(t_log10 &n) {
+        t_log10 result = 0;
+        while (n >= 10) {
+            n /= 10;
+            ++result;
+        }
+        return result;
+    }
+    template <typename T_log10>
+    T_log10 log10(T_log10 &&n) {
+        T_log10 result = 0;
+        while (n >= 10) {
+            n /= 10;
+            ++result;
+        }
+        return result;
+    }
+
+    template <typename t_logx>
+    t_logx log(t_logx &n, t_logx &x) {
+        t_logx result = 0;
+        while (n >= x) {
+            n /= x;
+            ++result;
+        }
+        return result;
+    }
+    template <typename T_logx>
+    T_logx log(T_logx &&n, T_logx &&x) {
+        T_logx result = 0;
+        while (n >= x) {
+            n /= x;
+            ++result;
+        }
+        return result;
+    }
 }
 #endif // IJMATH_HPP
