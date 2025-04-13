@@ -535,6 +535,130 @@ namespace ij {
 			}
 			return is;
 		}
+		operator bool() {
+			return *this != 0;
+		}
+		operator short() {
+			if (*this > 32767) {
+				return 32767;
+			} else {
+				short ret = 0;
+				for (int i = 0; i < 5; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator int() {
+			if (*this > 2147483647) {
+				return 2147483647;
+			} else {
+				int ret = 0;
+				for (int i = 0; i < 10; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator unsigned int() {
+			if (*this > 4294967295) {
+				return 4294967295;
+			} else {
+				unsigned int ret = 0;
+				for (int i = 0; i < 10; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator signed() {
+			if (*this > 2147483647) {
+				return 2147483647;
+			} else {
+				int ret = 0;
+				for (int i = 0; i < 10; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator long() {
+			if (*this > 2147483647) {
+				return 2147483647;
+			} else {
+				long ret = 0;
+				for (int i = 0; i < 10; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator long long() {
+			if (*this > 9223372036854775807) {
+				return 9223372036854775807;
+			} else {
+				long long ret = 0;
+				for (int i = 0; i < 20; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator unsigned long long() {
+			if (*this > 18446744073709551615) {
+				return 18446744073709551615;
+			} else {
+				unsigned long long ret = 0;
+				for (int i = 0; i < 20; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator float() {
+			if (*this > 3.402823466e+38) {
+				return 3.402823466e+38;
+			} else {
+				float ret = 0;
+				for (int i = 0; i < 10; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator double() {
+			if (*this > 1.7976931348623157e+308) {
+				return 1.7976931348623157e+308;
+			} else {
+				double ret = 0;
+				for (int i = 0; i < 20; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator unsigned char() {
+			if (*this > 255) {
+				return 255;
+			} else {
+				unsigned char ret = 0;
+				for (int i = 0; i < 3; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return ret;
+			}
+		}
+		operator char() {
+			if (*this > 126) {
+				return char(126);
+			} else {
+				short ret = 0;
+				for (int i = 0; i < 3; i++) {
+					ret = ret * 10 + this->num[i];
+				}
+				return char(ret);
+			}
+		}
 	};
 } // namespace IJ
 
