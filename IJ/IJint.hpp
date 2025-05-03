@@ -541,10 +541,15 @@ namespace ij {
 		operator short() {
 			if (*this > 32767) {
 				return 32767;
+			} else if (*this < -32768) {
+				return -32768;
 			} else {
 				short ret = 0;
-				for (int i = 0; i < 5; i++) {
-					ret = ret * 10 + this->num[i];
+				for (int k = 4; k >= 0; k--) {
+					ret = ret * 10 + short(num[k]);
+				}
+				if (*this < 0) {
+					ret = -ret;
 				}
 				return ret;
 			}
@@ -552,10 +557,15 @@ namespace ij {
 		operator int() {
 			if (*this > 2147483647) {
 				return 2147483647;
+			} else if (*this < -2147483648) {
+				return -2147483648;
 			} else {
 				int ret = 0;
-				for (int i = 0; i < 10; i++) {
-					ret = ret * 10 + this->num[i];
+				for (int k = 9; k >= 0; k--) {
+					ret = ret * 10 + short(num[k]);
+				}
+				if (*this < 0) {
+					ret = -ret;
 				}
 				return ret;
 			}
@@ -563,32 +573,15 @@ namespace ij {
 		operator unsigned int() {
 			if (*this > 4294967295) {
 				return 4294967295;
+			} else if (*this < 0) {
+				return 0;
 			} else {
 				unsigned int ret = 0;
-				for (int i = 0; i < 10; i++) {
-					ret = ret * 10 + this->num[i];
+				for (int k = 9; k >= 0; k--) {
+					ret = ret * 10 + short(num[k]);
 				}
-				return ret;
-			}
-		}
-		operator signed() {
-			if (*this > 2147483647) {
-				return 2147483647;
-			} else {
-				int ret = 0;
-				for (int i = 0; i < 10; i++) {
-					ret = ret * 10 + this->num[i];
-				}
-				return ret;
-			}
-		}
-		operator long() {
-			if (*this > 2147483647) {
-				return 2147483647;
-			} else {
-				long ret = 0;
-				for (int i = 0; i < 10; i++) {
-					ret = ret * 10 + this->num[i];
+				if (*this < 0) {
+					ret = -ret;
 				}
 				return ret;
 			}
@@ -596,10 +589,15 @@ namespace ij {
 		operator long long() {
 			if (*this > 9223372036854775807) {
 				return 9223372036854775807;
+			} else if (*this < -9223372036854775808) {
+				return -9223372036854775808;
 			} else {
 				long long ret = 0;
-				for (int i = 0; i < 20; i++) {
-					ret = ret * 10 + this->num[i];
+				for (int k = 18; k >= 0; k--) {
+					ret = ret * 10 + short(num[k]);
+				}
+				if (*this < 0) {
+					ret = -ret;
 				}
 				return ret;
 			}
@@ -607,56 +605,17 @@ namespace ij {
 		operator unsigned long long() {
 			if (*this > 18446744073709551615) {
 				return 18446744073709551615;
+			} else if (*this < 0) {
+				return 0;
 			} else {
 				unsigned long long ret = 0;
-				for (int i = 0; i < 20; i++) {
-					ret = ret * 10 + this->num[i];
+				for (int k = 18; k >= 0; k--) {
+					ret = ret * 10 + short(num[k]);
+				}
+				if (*this < 0) {
+					ret = -ret;
 				}
 				return ret;
-			}
-		}
-		operator float() {
-			if (*this > 3.402823466e+38) {
-				return 3.402823466e+38;
-			} else {
-				float ret = 0;
-				for (int i = 0; i < 10; i++) {
-					ret = ret * 10 + this->num[i];
-				}
-				return ret;
-			}
-		}
-		operator double() {
-			if (*this > 1.7976931348623157e+308) {
-				return 1.7976931348623157e+308;
-			} else {
-				double ret = 0;
-				for (int i = 0; i < 20; i++) {
-					ret = ret * 10 + this->num[i];
-				}
-				return ret;
-			}
-		}
-		operator unsigned char() {
-			if (*this > 255) {
-				return 255;
-			} else {
-				unsigned char ret = 0;
-				for (int i = 0; i < 3; i++) {
-					ret = ret * 10 + this->num[i];
-				}
-				return ret;
-			}
-		}
-		operator char() {
-			if (*this > 126) {
-				return char(126);
-			} else {
-				short ret = 0;
-				for (int i = 0; i < 3; i++) {
-					ret = ret * 10 + this->num[i];
-				}
-				return char(ret);
 			}
 		}
 	};
